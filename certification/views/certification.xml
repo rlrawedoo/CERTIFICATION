@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="certification_question_search" model="ir.ui.view">
+           <field name="name">certification.question.search</field>
+           <field name="model">certification.question</field>
+            <field name="arch" type="xml">
+                <search string="">
+                  <field name="name" string="Question" />
+                </search>
+           </field>
+        </record>
+
+        <record model="ir.ui.view" id="certification_question_tree">
+            <field name="name">certification.question.tree</field>
+            <field name="model">certification.question</field>
+            <field name="arch" type="xml">
+                <tree string="Question">
+                    <field name="name"/>
+                    <field name="category"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="certification_question_form">
+            <field name="name">certification.question.form</field>
+            <field name="model">certification.question</field>
+            <field name="arch" type="xml">
+                <form string="Question">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+
+                            <group>
+                                <field name="category" />
+                            </group>
+                        </group>
+                        <group string="Answer">
+                            <field name="answer" widget="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="certification_question_action">
+            <field name="name">Certification Questions</field>
+            <field name="res_model">certification.question</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Certification Answer"
+                  id="menu_certification_answer"
+                  action="certification_question_action" />
+
+</odoo>
